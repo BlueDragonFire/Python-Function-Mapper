@@ -36,5 +36,3 @@ class path_scanner:
                     file_list.append(i)
 
         return file_list
-
-    print(detect_folders("/home/heph/Python/yt-dlp"))
