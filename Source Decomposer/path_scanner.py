@@ -4,9 +4,8 @@ import os
 
 class path_scanner:
 
-    def detect_folders(path):
+    def detect_folders(self, path):
 
-        #slice_0 = slice(0,1)
         folder_list = []
 
         for i in os.listdir(path):
@@ -17,7 +16,7 @@ class path_scanner:
         return folder_list
 
 
-    def detect_all_files(path):
+    def detect_all_files(self, path):
 
         file_list = []
         for i in os.listdir(path):
@@ -27,7 +26,7 @@ class path_scanner:
 
         return file_list
 
-    def detect_python_files(path):
+    def detect_python_files(self, path):
 
         file_list = []
         for i in os.listdir(path):

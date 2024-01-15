@@ -15,3 +15,7 @@ class content_reader:
         a = self.read_file(text)
         b = self.find_functions(a)
         return b
+
+a = content_reader()
+
+print(a.read_file("/home/heph/Python/Constellator/Source Decomposer/content_reader.py"))
