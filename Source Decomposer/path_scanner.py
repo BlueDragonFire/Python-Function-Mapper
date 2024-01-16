@@ -4,46 +4,18 @@ import os
 
 class path_scanner:
 
-    def detect_folders(self, path):
-
-        folder_list = []
-
-        for i in os.listdir(path):
-            if not os.path.isfile(os.path.join(path, i)):
-                if not i.startswith('.'):
-                    folder_list.append(i)
-                    
-        return folder_list
-
-    #possibly redundant
-    def detect_all_files(self, path):
-
-        file_list = []
-        for i in os.listdir(path):
-            if os.path.isfile(os.path.join(path, i)):
-                file_list.append(i)
-                #print(i)
-
-        return file_list
-
-    def detect_python_files(self, path):
-
-        file_list = []
-        for i in os.listdir(path):
-            if os.path.isfile(os.path.join(path, i)):
-                if i.endswith('.py'):
-                    file_list.append(i)
-
-        return file_list
 
     def BFS(self, path):
-        x = os.walk(path)
-        return x
+        print('')
+        for (root,dirs,files) in os.walk(path):
+            dirs[:] = [d for d in dirs if not d.startswith('.')]
+            files[:] = [f for f in files if f.endswith('.py') | f.endswith('.json')]
+            print(root)
+            print(dirs)
+            print(files)
+            print("=======================")
 
 
 a = path_scanner()
 
-b = a.BFS("/home/heph/Python/Constellator")
-print('')
-for i in b:
-    print(i)
+b = a.BFS("/home/heph/Python/yt-dlp")
