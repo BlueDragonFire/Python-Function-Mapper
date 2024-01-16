@@ -1,4 +1,4 @@
-#contains methods for reading through a path and creating a map of all files and folders therein
+#This class is for reading through a path and creating a map of all files and folders therein
 
 import os
 
@@ -15,7 +15,7 @@ class path_scanner:
                     
         return folder_list
 
-
+    #possibly redundant
     def detect_all_files(self, path):
 
         file_list = []
@@ -35,3 +35,15 @@ class path_scanner:
                     file_list.append(i)
 
         return file_list
+
+    def BFS(self, path):
+        x = os.walk(path)
+        return x
+
+
+a = path_scanner()
+
+b = a.BFS("/home/heph/Python/Constellator")
+print('')
+for i in b:
+    print(i)

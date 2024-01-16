@@ -1,3 +1,4 @@
+#This class is for the opening and reading of file contents
 import re
 
 class content_reader:
@@ -8,14 +9,10 @@ class content_reader:
         return file_contents
 
     def find_functions(self, text):
-        x = re.findall("def.*:", text)
+        x = re.findall("def.*:|lambda.*:", text)
         return x
 
     def get_functions(self, text):
         a = self.read_file(text)
         b = self.find_functions(a)
         return b
-
-a = content_reader()
-
-print(a.read_file("/home/heph/Python/Constellator/Source Decomposer/content_reader.py"))
