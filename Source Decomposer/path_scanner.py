@@ -17,9 +17,3 @@ class path_scanner:
             result.append(temp)
         
         return result
-
-a = path_scanner()
-a2 = json_builder()
-b = a.BFS("/home/heph/Python/yt-dlp")
-#print(b)
-a2.create_json_file(a2.jsonify(b))
