@@ -12,7 +12,7 @@ class content_reader:
         x = re.findall("def.*:|lambda.*:", text)
         return x
 
-    def get_functions(self, text):
-        a = self.read_file(text)
+    def get_functions(self, path):
+        a = self.read_file(path)
         b = self.find_functions(a)
         return b
