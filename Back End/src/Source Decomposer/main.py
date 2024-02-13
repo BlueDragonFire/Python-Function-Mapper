@@ -1,23 +1,16 @@
 from path_scanner import *
 from content_reader import *
-from json_builder import *
+from graph_builder import *
 import json
 
 def main(path):
     
-    scan = path_scanner()
-    read = content_reader()
-    jsonify = json_builder()
-    
-    x = scan.BFS(path)
-    print(json.dumps(x))
-    #y = read.get_functions(x[2])
-    #print(y)
-    #json.jsonify_and_create(read.get_functions(scan.BFS(path)))
+    x = graph_builder()
+    y = path_scanner()
+    a = y.search(path)
+    x.create_graph_file(a)
 
-
-
-#if __name__ == "__main__":
-    #print("input directory")
-    #x = input()
-    #main("/home/heph/Python/yt-dlp")
+if __name__ == "__main__":
+    print("input directory")
+    x = input()
+    main(x)

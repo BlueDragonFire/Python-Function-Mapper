@@ -9,7 +9,7 @@ class content_reader:
         return file_contents
 
     def find_functions(self, text):
-        x = re.findall("def.*:|lambda.*:", text)
+        x = re.findall("def.*:", text)
         return x
 
     def get_functions(self, path):
